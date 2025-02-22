@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+
+<!-- HEAD -->
+
+<head>
+    <!-- META CHARSET -->
+    <meta charset="UTF-8">
+    <!-- META VIEWPORT -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- META EDGE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Athenaguard</title>
+    <!-- META DESCRIPTION -->
+    <meta name="description" content="Athenaguard">
+    <!-- META KEYWORDS -->
+    <meta name="keywords" content="
+     AthenaGuard Security, 
+     AthenaGuard Cybersecurity, 
+     Business Security Solutions, 
+     Continuous Security Monitoring, 
+     Incident Response Experts, 
+     Customized Security Strategies, 
+     Cyber Threat Protection, 
+     Digital Security for Businesses, 
+     Comprehensive Cybersecurity Services, 
+     Specialized Security Experts, 
+     Advanced Threat Intelligence, 
+     Business Cyber Defense, 
+     Innovative Cybersecurity Solutions, 
+     Secure Digital Environment, 
+     Reliable Cybersecurity Company, 
+     Cost-Effective Security Services, 
+     Proactive Security Monitoring, 
+     Enhanced Security Posture, 
+     Professional Cybersecurity Services, 
+     Cybersecurity for Enterprises, 
+     Minimize Cybersecurity Risks, 
+     Operational Cost Reduction, 
+     Trusted Security Providers, 
+     Fearless Business Innovation, 
+     Secure Digital Transformation">
+    <!-- META AUTHOR -->
+    <meta name="author" content="Fazliddin Fayziev">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+</head>
+
+<!-- HEAD END -->
+
+<!-- BODY -->
+
+<body>
+
+    <!-- ============================================== SUB HEADER ============================================== -->
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="../images/logo.png" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times hide" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+					<li><a href="/about">ABOUT</a></li>
+					<li><a href="/services">SERVICES</a></li>
+					<li><a href="/contact">CONTACT</a></li>
+                </ul>                
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </nav>
+        <h1 style="font-size: 50px; margin-top: 50px;">Contact Us</h1>
+    </section>
+    <!-- ============================================== SUB HEADER END =========================================== -->
+
+    <!-- ============================================== FIXED ICONS ============================================== -->
+    <div id="fixed-social">
+        <div>
+            <a href="mailto:info@athenaguard.ca" class="fixed-mail" target="_blank">
+                <i class="fa fa-envelope"></i>
+                <span>Mail</span>
+            </a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/company/athenaguards" class="fixed-linkedin" target="_blank">
+                <i class="fa fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </div>
+    <!-- ============================================== FIXED ICONS END ========================================= -->
+
+    <!-- ============================================== CONTACT US ========================================= -->
+    <section class="contact-us">
+        <div class="row">
+            <div class="contact-col">
+                <div>
+                    <i class="fa fa-home"></i>
+                    <span>
+                        <h5>Toronto</h5>
+                        <p style="color: black;">Ontario CA</p>
+                    </span>
+                </div>
+                <div>
+                    <i class="fa fa-envelope"></i>
+                    <span>
+                        <h5><a href="mailto:info@athenaguard.ca"
+                                style="text-decoration: none; color: inherit;">info@athenaguard.ca</a></h5>
+                        <p style="color: black;">Feel free to reach out to us via email.</p>
+                    </span>
+                </div>
+                <div>
+
+                    <i class="fa fa-linkedin"></i>
+                    <span>
+                        <h5><a href="https://www.linkedin.com/company/athenaguards" target="_blank"
+                                style="text-decoration: none; color: inherit;">LinkedIn</a></h5>
+                        <p style="color: black;">Follow Us on LinkedIn</p>
+                    </span>
+                </div>
+
+                <!-- ============================================== LOCATION ========================================= -->
+                <section class="location">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d116153.91733179704!2d-79.382698!3d43.65417!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDPCsDM5JzE1LjAiTiA3OcKwMjMnMjguMCJX!5e0!3m2!1sen!2sca!4v1693903870389!5m2!1sen!2sca"
+                        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </section>
+                <!-- ============================================== LOCATION END ========================================= -->
+            </div>
+            <div class="contact-col">
+                <form id="contactForm">
+                    <label for="name" class="name">Name</label>
+                    <input id="f-name" class="first-name" type="text" name="first-name" placeholder="First Name"
+                        maxlength="20" required>
+
+                    <input id="l-name" class="last-name" type="text" name="last-name" placeholder="Last Name"
+                        maxlength="20" required>
+
+                    <label for="subject" class="subject">Subject</label>
+                    <input type="text" name="subject" id="subject" maxlength="45"
+                        placeholder="Request for Cybersecurity Services" required>
+
+                    <label for="email" class="email">Email</label>
+                    <input id="email" type="email" name="email" placeholder="faz....@gmail.com" required>
+
+                    <label for="message" class="message">Message</label>
+                    <textarea id="message" name="message" cols="30" rows="7" required maxlength="500"
+                        placeholder="I need information about Cybersecurity Services!"></textarea>
+
+                    <p class="button-container">
+                        <button type="submit" class="button hero-btn"
+                            style="border: inset 3px rgb(7, 7, 7); cursor: pointer; color: black;">Send Message</button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- ============================================== CONTACT US END ========================================= -->
+
+    <!-- ===================================================== FOOTER ====================================================== -->
+    <section class="footer">
+        <p class="about-des" style="color: black;">copyright &copy; Athenaguard <span id="date"></span>. all rights
+            reserved</p>
+        <div class="icons">
+            <a href="mailto:info@athenaguard.ca"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/athenaguards"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </section>
+    <!-- ===================================================== FOOTER END ====================================================== -->
+
+    <!-- ======================================================================================================================= -->
+    <!-- ===================================================== JAVASCRIPT ====================================================== -->
+    <!-- ======================================================================================================================= -->
+
+    <!-- JAVACRIPT CODE -->
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get form values
+            const fName = document.getElementById("f-name").value;
+            const lName = document.getElementById("l-name").value;
+            const subject = document.getElementById("subject").value;
+            const email = document.getElementById("email").value;
+            const message = document.getElementById("message").value;
+
+            // Prepare data for API
+            const data = {
+                firstName: fName,
+                lastName: lName,
+                subject: subject,
+                email: email,
+                message: message
+            };
+
+            // Send API request
+            fetch("https://athenaguard.eton.uz/athenaguard/api/email", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => {
+                    if (response.ok) {
+                        alert("Message sent successfully!");
+                    } else {
+                        alert("Failed to send the message. Please try again later.");
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    alert("An error occurred while sending the message.");
+                });
+
+            // Clear the form
+            document.getElementById("contactForm").reset();
+        });
+
+        // ********** set date ************
+        const date = document.getElementById("date");
+        date.innerHTML = new Date().getFullYear();
+
+        // Toggle Menu
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+    </script>
+
+</body>
+<!-- BODY END -->
+
+</html>
