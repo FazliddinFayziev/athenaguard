@@ -5,7 +5,8 @@
     "rewrites": [
       { "source": "/about", "destination": "/about/index.html" },
       { "source": "/service", "destination": "/service/index.html" },
-      { "source": "/contact", "destination": "/contact/index.html" }
+      { "source": "/contact", "destination": "/contact/index.html" },
+      { "source": "/career", "destination": "/career/index.html" }
     ],
     "ignore": [
       "firebase.json",

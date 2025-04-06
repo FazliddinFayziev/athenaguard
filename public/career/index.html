@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+
+<!-- HEAD -->
+<head>
+    <!-- META CHARSET -->
+    <meta charset="UTF-8">
+    <!-- META VIEWPORT -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- META EDGE -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- TITLE -->
+    <title>Athenaguard</title>
+    <!-- META DESCRIPTION -->
+    <meta name="description" content="Athenaguard">
+    <!-- META KEYWORDS -->
+    <meta name="keywords" content="
+     AthenaGuard Security, 
+     AthenaGuard Cybersecurity, 
+     Business Security Solutions, 
+     Continuous Security Monitoring, 
+     Incident Response Experts, 
+     Customized Security Strategies, 
+     Cyber Threat Protection, 
+     Digital Security for Businesses, 
+     Comprehensive Cybersecurity Services, 
+     Specialized Security Experts, 
+     Advanced Threat Intelligence, 
+     Business Cyber Defense, 
+     Innovative Cybersecurity Solutions, 
+     Secure Digital Environment, 
+     Reliable Cybersecurity Company, 
+     Cost-Effective Security Services, 
+     Proactive Security Monitoring, 
+     Enhanced Security Posture, 
+     Professional Cybersecurity Services, 
+     Cybersecurity for Enterprises, 
+     Minimize Cybersecurity Risks, 
+     Operational Cost Reduction, 
+     Trusted Security Providers, 
+     Fearless Business Innovation, 
+     Secure Digital Transformation">
+    <!-- META AUTHOR -->
+    <meta name="author" content="Fazliddin Fayziev">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico" />
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="../CSS/font-awesome.min.css">
+</head>
+<!-- HEAD END -->
+
+<!-- STYLE -->
+<style>
+    .job-listing-container {
+        background-color: #f9f9f9;
+        padding: 40px 20px;
+        display: flex;
+        justify-content: center;
+    }
+
+    .job-listings {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 25px;
+        max-width: 1200px;
+        width: 100%;
+    }
+
+    .job-card {
+        background: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+    }
+
+    .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .job-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+    }
+
+    .job-description {
+        font-size: 16px;
+        color: #666;
+        margin: 10px 0;
+    }
+
+    .apply-btn {
+        background: #007bff;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .apply-btn:hover {
+        background: #0056b3;
+    }
+
+    .application-container {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 30px;
+        background-color: white;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+    }
+
+    h2#form-job-title {
+        font-size: 28px;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    /* Input labels and fields */
+    .input-label {
+        font-size: 16px;
+        margin-bottom: 8px;
+        color: #333;
+        font-weight: 600;
+        display: block;
+    }
+
+    .input-field {
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 18px;
+        border: 2px solid #ddd;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: #f9f9f9;
+        box-sizing: border-box;
+        transition: border-color 0.3s ease;
+    }
+
+    .input-field:focus {
+        border-color: #6c63ff;
+        outline: none;
+    }
+
+    textarea.input-field {
+        resize: vertical;
+    }
+
+    select.input-field {
+        cursor: pointer;
+    }
+
+    /* Submit Button */
+    .submit-btn {
+        background-color: #6c63ff;
+        color: white;
+        padding: 15px 30px;
+        border: none;
+        border-radius: 50px;
+        font-size: 18px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        width: 100%;
+    }
+
+    .submit-btn:hover {
+        background-color: #5741d0;
+    }
+
+    /* Button Container */
+    .button-container {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    /* Loading Overlay */
+    .loading-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.9);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        display: none;
+    }
+
+    .loading-spinner {
+        width: 50px;
+        height: 50px;
+        border: 5px solid rgba(108, 99, 255, 0.3);
+        border-radius: 50%;
+        border-top-color: #6c63ff;
+        animation: spin 1s ease-in-out infinite;
+    }
+
+    @keyframes spin {
+        to { transform: rotate(360deg); }
+    }
+
+    /* Responsive Styles */
+    @media(max-width: 700px) {
+        .application-container {
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .input-field {
+            padding: 12px;
+            font-size: 14px;
+        }
+
+        .submit-btn {
+            font-size: 16px;
+            padding: 12px 25px;
+        }
+    }
+</style>
+<!-- STYLE END -->
+
+<!-- BODY -->
+<body>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- ============================================== SUB HEADER ============================================== -->
+    <section class="sub-header">
+        <nav>
+            <a href="index.html"><img src="images/logo.png" alt="logo"></a>
+            <div class="nav-links" id="navLinks">
+                <i class="fa fa-times hide" onclick="hideMenu()"></i>
+                <ul>
+                    <li><a href="/">HOME</a></li>
+                    <li><a href="/about">ABOUT</a></li>
+                    <li><a href="/services">SERVICES</a></li>
+                    <li><a href="/contact">CONTACT</a></li>
+                    <li><a href="/career">CAREER</a></li>
+                </ul>
+            </div>
+            <i class="fa fa-bars" onclick="showMenu()" class="showMenu"></i>
+        </nav>
+        <h1 style="font-size: 50px; margin-top: 50px;">Athenaguard Career</h1>
+    </section>
+    <!-- ============================================== SUB HEADER END =========================================== -->
+
+    <!-- ============================================== FIXED ICONS ============================================== -->
+    <div id="fixed-social">
+        <div>
+            <a href="mailto:info@athenaguard.ca" class="fixed-mail" target="_blank">
+                <i class="fa fa-envelope"></i>
+                <span>Mail</span>
+            </a>
+        </div>
+        <div>
+            <a href="https://www.linkedin.com/company/athenaguards" class="fixed-linkedin" target="_blank">
+                <i class="fa fa-linkedin"></i>
+                <span>LinkedIn</span>
+            </a>
+        </div>
+    </div>
+    <!-- ============================================== FIXED ICONS END ========================================= -->
+
+    <!-- ============================================== JOB LISTING ========================================= -->
+    <section class="job-listing-container">
+        <div class="job-listings" id="job-listings"></div>
+    </section>
+    <!-- ============================================== JOB LISTING END ========================================= -->
+
+    <!-- ============================================== APPLICATION ========================================= -->
+    <div class="application-container">
+        <h2 id="form-job-title">Apply for: </h2>
+        <form enctype="multipart/form-data" id="applicationForm">
+            <label for="job-title" class="input-label">Job Title</label>
+            <select id="job-title" class="input-field" name="jobTitle" required>
+                <option value="" disabled selected>Select a Job Title</option>
+            </select>
+
+            <label for="name" class="input-label">Name</label>
+            <input id="name" class="input-field" type="text" name="name" placeholder="First Name" maxlength="20" required>
+
+            <label for="email" class="input-label">Email</label>
+            <input id="email" class="input-field" type="email" name="email" placeholder="example@gmail.com" required>
+
+            <label for="phone" class="input-label">Phone Number</label>
+            <input id="phone" class="input-field" type="tel" name="phone" placeholder="+1..." required>
+
+            <label for="address" class="input-label">Address</label>
+            <input id="address" class="input-field" type="text" name="address" placeholder="City, State" required>
+
+            <label for="coverLetter" class="input-label">Cover Letter</label>
+            <textarea id="coverLetter" class="input-field" name="coverLetter" cols="30" rows="7" maxlength="500"
+                placeholder="Could you share a bit about yourself?" required></textarea>
+
+            <label for="resume" class="input-label">Upload Resume</label>
+            <input id="resume" type="file" class="input-field" name="resume" accept=".pdf,.doc,.docx" required>
+
+            <div class="button-container">
+                <button type="submit" class="submit-btn" id="submitBtn">Submit Application</button>
+            </div>
+        </form>
+    </div>
+    <!-- ============================================== APPLICATION END ========================================= -->
+
+    <!-- ===================================================== FOOTER ====================================================== -->
+    <section class="footer">
+        <p class="about-des" style="color: black;">copyright &copy; Athenaguard <span id="date"></span>. all rights
+            reserved</p>
+        <div class="icons">
+            <a href="mailto:info@athenaguard.ca"><i class="fa fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/athenaguards"><i class="fa fa-linkedin"></i></a>
+        </div>
+    </section>
+    <!-- ===================================================== FOOTER END ====================================================== -->
+
+    <!-- ======================================================================================================================= -->
+    <!-- ===================================================== JAVASCRIPT ====================================================== -->
+    <!-- ======================================================================================================================= -->
+
+    <script>
+        // ********** set date ************ 
+        const date = document.getElementById("date");
+        date.innerHTML = new Date().getFullYear();
+
+        // Toggle Menu
+        var navLinks = document.getElementById("navLinks");
+        function showMenu() {
+            navLinks.style.right = "0";
+        }
+        function hideMenu() {
+            navLinks.style.right = "-200px";
+        }
+
+        // ================================================ JOBS =====================================================================>
+        const jobs = [
+            { title: "Sales Developer Intern", description: "- Contact prospects.<br>- Research leads.<br>- Qualify and schedule.<br>- Track interactions in Excel." },
+            { title: "Web Developer Intern", description: "- Maintain and update website.<br>- Troubleshoot issues.<br>- Optimize for SEO.<br>- Enhance user experience." },
+            { title: "Marketing/Communication Intern", description: "- Run marketing campaigns.<br>- Create content.<br>- Manage communications.<br>- Coordinate partnerships." },
+            { title: "Business & Financial Analyst Intern", description: "- Analyze market and competitor data.<br>- Develop financial models.<br>- Create reports.<br>- Identify trends and inefficiencies." }
+        ];
+
+        const jobContainer = document.getElementById("job-listings");
+
+        jobs.forEach((job, index) => {
+            const jobCard = document.createElement("div");
+            jobCard.classList.add("job-card");
+
+            jobCard.innerHTML = `
+                <h2 class="job-title">${job.title}</h2>
+                <p class="job-description">${job.description}</p>
+                <button class="apply-btn" data-job="${job.title}">Apply</button>
+            `;
+
+            jobContainer.appendChild(jobCard);
+        });
+
+        const jobSelect = document.getElementById('job-title');
+        jobs.forEach(job => {
+            const option = document.createElement('option');
+            option.value = job.title;
+            option.textContent = job.title;
+            jobSelect.appendChild(option);
+        });
+
+        // Scroll to the application form and set job title
+        document.querySelectorAll('.apply-btn').forEach(button => {
+            button.addEventListener('click', (e) => {
+                const jobTitle = e.target.getAttribute('data-job');
+
+                // Set the selected job title in the form
+                document.getElementById('job-title').value = jobTitle;
+
+                // Scroll to the application form
+                window.scrollTo({
+                    top: document.querySelector('.application-container').offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission
+        document.getElementById('applicationForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const loadingOverlay = document.getElementById('loadingOverlay');
+            const submitBtn = document.getElementById('submitBtn');
+
+            try {
+                // Show loading overlay
+                loadingOverlay.style.display = 'flex';
+                // Hide submit button
+                submitBtn.style.display = 'none';
+
+                const formData = new FormData(e.target);
+                const response = await fetch('https://athenaguard.eton.uz/athenaguard/api/jobapplication', {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                const text = await response.text();
+                const result = text ? JSON.parse(text) : {};
+
+                if (response.ok) {
+                    alert('Application submitted successfully!');
+                    e.target.reset();
+                } else {
+                    alert(result.error || 'Submission failed. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please check your connection and try again.');
+            } finally {
+                // Hide loading overlay
+                loadingOverlay.style.display = 'none';
+                // Show submit button again
+                submitBtn.style.display = 'block';
+            }
+        });
+    </script>
+</body>
+<!-- BODY END -->
+</html>
